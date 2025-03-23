@@ -1,0 +1,132 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografia base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    background-image: url('../resources/SOAD_Eventim_background.jpg');
+}
+/* Cabeçalho e navegação */
+header {
+    background-color: #003366;
+    /* Azul escuro, cor institucional */
+    color: #fff;
+    padding: 15px 20px;
+}
+
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+    text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Seções e artigos */
+section,
+article {
+    margin-bottom: 40px;
+}
+
+/* Títulos */
+h1,
+h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+/* Estilo para artigos com informações detalhadas */
+article {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-left: 5px solid #003366;
+    border-radius: 4px;
+}
+
+article p {
+    margin-bottom: 20px;
+}
+
+/* Listas */
+article ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+article li {
+    margin-bottom: 15px;
+}
+
+/* Imagens e legendas */
+figure {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Rodapé */
+footer {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
