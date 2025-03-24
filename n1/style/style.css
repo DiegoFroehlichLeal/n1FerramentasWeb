@@ -243,6 +243,68 @@ footer {
     font-size: 0.9rem;
 }
 
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    /* Espaço entre as imagens (opcional) */
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Imagens em miniatura (100x100) */
+.galeria img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    /* Ajusta a imagem ao quadrado */
+    cursor: pointer;
+}
+
+/* As divisões .overlay ficam ocultas por padrão */
+.overlay {
+    display: none;
+    /* Some quando não está selecionada */
+    position: fixed;
+    /* Fixa na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Fundo semitransparente */
+    z-index: 9999;
+    /* Acima de todos os elementos */
+}
+
+/* Quando a divisão for "alvo" (:target), ela aparece */
+.overlay:target {
+    display: block;
+}
+
+/* Imagem ampliada (500x500) dentro do overlay */
+.overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+/* Botão “fechar” (opcional) */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    font-family: sans-serif;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     header nav ul {
