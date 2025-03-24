@@ -10,15 +10,28 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #fff;
+    background-color: #75001d;
     padding: 20px;
-    background-image: url('../resources/SOAD_Eventim_background.jpg');
 }
+
+/* Link para voltar à página principal */
+.link-voltar {
+    color: #9b1536; 
+    text-decoration: none; 
+    font-size: 1.1rem; 
+    display: inline-block; 
+    margin-bottom: 20px; 
+}
+
+.link-voltar:hover,
+.link-voltar:focus {
+    text-decoration: underline; 
+    color: #75001d; 
+}
+
 /* Cabeçalho e navegação */
 header {
-    background-color: #003366;
-    /* Azul escuro, cor institucional */
-    color: #fff;
+    background-color: #9b1536;
     padding: 15px 20px;
 }
 
@@ -49,6 +62,27 @@ header nav ul li a:focus {
     text-decoration: underline;
 }
 
+/* Banner de apresentação do festival */
+.imagemdofestival {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.imagemdofestival img {
+    width: 950px; 
+    height: 500px; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+/* Fundo abaixo do banner */
+.fundoabaixodaimagem {
+    background-color: #9b1536; 
+    height: 100px; 
+    width: 100%; 
+}
+
 /* Conteúdo principal */
 main {
     max-width: 1000px;
@@ -60,20 +94,30 @@ main {
 section,
 article {
     margin-bottom: 40px;
+    color: #fff;
 }
 
 /* Títulos */
 h1,
 h2 {
-    color: #003366;
+    color: #ffffff;
     margin-bottom: 20px;
+    font-family: fantasy;
+    font-size: 40px;
+}
+
+h3 {
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: fantasy;
+    font-size: 40px;
 }
 
 /* Estilo para artigos com informações detalhadas */
 article {
-    background-color: #f7f7f7;
+    background-color: #9b1536;
     padding: 20px;
-    border-left: 5px solid #003366;
+    border-left: 5px solid #9b1536;
     border-radius: 4px;
 }
 
@@ -99,21 +143,100 @@ figure {
 }
 
 figure img {
-    max-width: 100px;
-    height: auto;
+    max-width: 300px;
+    height: 400px;
     display: block;
     margin: 0 auto;
+    box-shadow: 2px 2px 6px #000000;
+    
+    
 }
 
 figcaption {
     margin-top: 8px;
-    font-size: 0.9rem;
-    color: #555;
+    font-family: serif;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #75001d;
+    border-radius: 3px;
+}
+
+/* Carossel dos artistas */
+.menudeartistas {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Animação do carrossel */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-875%);
+    }
+}
+
+/* Estilo para as imagens dentro do carrossel */
+.menudeartistas figure {
+    flex: 0 0 auto;
+    animation: scroll 70s linear infinite;
+}
+
+.menudeartistas figure img {
+    max-width: 300px;
+    height: 400px;
+    display: block;
+    margin: 0 0px;
+}
+
+/* Pausar a animação ao passar o mouse */
+.menudeartistas:hover figure {
+    animation-play-state: paused;
+}
+
+/* Página de horários */
+.programacao {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px;
+    text-align: center;
+    background-color: #9b1536; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dia {
+    margin-bottom: 30px; 
+}
+
+.dia h3 {
+    color: #ffffff; 
+    font-size: 30px; 
+    margin-bottom: 15px; 
+}
+
+.dia ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.dia ul li {
+    color: #ffffff; 
+    font-size: 18px; 
+    margin-bottom: 10px;
+}
+
+.dia ul li strong {
+    color: #ffcc00;
 }
 
 /* Rodapé */
 footer {
-    background-color: #003366;
+    background-color: #9b1536;
     color: #fff;
     text-align: center;
     padding: 15px 20px;
