@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Tipografia base */
+/* Tipografia */
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
@@ -14,7 +14,7 @@ body {
     padding: 20px;
 }
 
-/* Link para voltar à página principal */
+/* Link para voltar */
 .link-voltar {
     color: #9b1536; 
     text-decoration: none; 
@@ -29,7 +29,7 @@ body {
     color: #75001d; 
 }
 
-/* Cabeçalho e navegação */
+/* Cabeçalho */
 header {
     background-color: #9b1536;
     padding: 15px 20px;
@@ -62,7 +62,7 @@ header nav ul li a:focus {
     text-decoration: underline;
 }
 
-/* Banner de apresentação do festival */
+/* Banner */
 .imagemdofestival {
     background-color: #000000;
     padding: 20px 0;
@@ -76,7 +76,7 @@ header nav ul li a:focus {
     margin: 0 auto; 
 }
 
-/* Fundo abaixo do banner */
+/* Faixa decorativa */
 .fundoabaixodaimagem {
     background-color: #9b1536; 
     height: 100px; 
@@ -113,7 +113,7 @@ h3 {
     font-size: 40px;
 }
 
-/* Estilo para artigos com informações detalhadas */
+/* Artigos */
 article {
     background-color: #9b1536;
     padding: 20px;
@@ -148,8 +148,6 @@ figure img {
     display: block;
     margin: 0 auto;
     box-shadow: 2px 2px 6px #000000;
-    
-    
 }
 
 figcaption {
@@ -161,7 +159,7 @@ figcaption {
     border-radius: 3px;
 }
 
-/* Carossel dos artistas */
+/* Carrossel de artistas */
 .menudeartistas {
     display: flex;
     overflow: hidden;
@@ -170,17 +168,11 @@ figcaption {
     position: relative;
 }
 
-/* Animação do carrossel */
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-875%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-875%); }
 }
 
-/* Estilo para as imagens dentro do carrossel */
 .menudeartistas figure {
     flex: 0 0 auto;
     animation: scroll 70s linear infinite;
@@ -193,45 +185,98 @@ figcaption {
     margin: 0 0px;
 }
 
-/* Pausar a animação ao passar o mouse */
 .menudeartistas:hover figure {
     animation-play-state: paused;
 }
 
-/* Página de horários */
+/* PÁGINA DE SHOWS  */
+
+/* Conteúdo principal */
 .programacao {
     max-width: 800px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 20px;
-    text-align: center;
-    background-color: #9b1536; 
+    background-color: #9b1536;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Dias de show */
 .dia {
-    margin-bottom: 30px; 
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.dia:last-child {
+    margin-bottom: 0;
 }
 
 .dia h3 {
-    color: #ffffff; 
-    font-size: 30px; 
-    margin-bottom: 15px; 
+    color: #ffcc00;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ffcc00;
 }
 
 .dia ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
 }
 
-.dia ul li {
-    color: #ffffff; 
-    font-size: 18px; 
-    margin-bottom: 10px;
+.dia li {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }
 
-.dia ul li strong {
+.dia li strong {
     color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Informações adicionais */
+.info-shows {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #9b1536;
+    border-radius: 8px;
+}
+
+.info-shows h3 {
+    color: #ffcc00;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.info-shows ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-shows li {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.info-shows li:before {
+    content: "•";
+    color: #ffcc00;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
 }
 
 /* Rodapé */
@@ -243,47 +288,38 @@ footer {
     font-size: 0.9rem;
 }
 
-
+/* GALERIA */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(4, 300px);
     grid-gap: 10px;
-    /* Espaço entre as imagens (opcional) */
     justify-content: center;
     margin-top: 50px;
 }
 
-/* Imagens em miniatura (100x100) */
 .galeria img {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    /* Ajusta a imagem ao quadrado */
     cursor: pointer;
 }
 
-/* As divisões .overlay ficam ocultas por padrão */
+/* Zoom das fotos */
 .overlay {
     display: none;
-    /* Some quando não está selecionada */
     position: fixed;
-    /* Fixa na tela */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    /* Fundo semitransparente */
     z-index: 9999;
-    /* Acima de todos os elementos */
 }
 
-/* Quando a divisão for "alvo" (:target), ela aparece */
 .overlay:target {
     display: block;
 }
 
-/* Imagem ampliada (500x500) dentro do overlay */
 .overlay img {
     position: absolute;
     top: 50%;
@@ -294,7 +330,6 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-/* Botão “fechar” (opcional) */
 .close {
     position: absolute;
     top: 20px;
@@ -305,13 +340,100 @@ footer {
     font-family: sans-serif;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
+/* PÁGINA DE INGRESSOS */
+.tipos-ingressos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
 }
+
+.ingresso-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.ingresso-card:hover {
+    transform: translateY(-5px);
+}
+
+.ingresso-card h3 {
+    color: #9b1536;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.preco {
+    font-size: 28px;
+    font-weight: bold;
+    color: #75001d;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.economia {
+    color: #ffcc00;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.beneficios {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.beneficios li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* Estilo de cada ingresso */
+.vip {
+    border: 2px solid #ffcc00;
+}
+
+.vip .preco {
+    color: #ffcc00;
+}
+
+.kit {
+    border: 2px solid #1d71b8;
+}
+
+.kit .preco {
+    color: #1d71b8;
+}
+
+.info-adicional {
+    background-color: #d1d0d0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.info-adicional h3 {
+    color: #9b1536;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.info-adicional ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: #333;
+}
+
+.info-adicional li {
+    margin-bottom: 10px;
+}
+
+/* FIM */
